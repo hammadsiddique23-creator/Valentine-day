@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fariya 💖 Will You Be My Valentine?</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to right, #ffdde1, #ee9ca7);
+      text-align: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .box {
+      background: white;
+      padding: 35px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      max-width: 400px;
+    }
+
+    h1 {
+      color: #e91e63;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    button {
+      font-size: 18px;
+      padding: 12px 28px;
+      margin: 15px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    #yes {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    #no {
+      background-color: #f44336;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h1>💖 Fariya 💖</h1>
+    <h2>Kya tum meri Valentine bano gi? 😍</h2>
+    <p>Soch samajh ke jawab dena 😏</p>
+
+    <button id="yes" onclick="yesClicked()">YES 💚</button>
+    <button id="no" onclick="noClicked()">NO ❌</button>
+  </div>
+
+  <script>
+    let yesSize = 1;
+    let noTexts = [
+      "Nahi 😒",
+      "Fariya please 😏",
+      "Itna bhi gussa? 🥺",
+      "Chocolate + flowers pakka 🌹🍫",
+      "Dinner date meri taraf se 🍽️",
+      "Movie bhi chalein? 🎬",
+      "Bas kar yaar 😭"
+    ];
+    let count = 0;
+
+    function noClicked() {
+      yesSize += 0.25;
+      document.getElementById("yes").style.transform = `scale(${yesSize})`;
+      document.getElementById("no").innerText =
+        noTexts[count % noTexts.length];
+      count++;
+    }
+
+    function yesClicked() {
+      document.body.innerHTML = `
+        <div class="box">
+          <h1>🎉 YAAAY FARİYA 🎉</h1>
+          <h2>Mujhe pata tha tum maan jaogi 😍</h2>
+          <p>Valentine date confirm 💕</p>
+          <p>Ab treat meri zimmedari 😎🍽️</p>
+        </div>
+      `;
+    }
+  </script>
+
+</body>
+</html>
